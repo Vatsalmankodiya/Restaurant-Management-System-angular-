@@ -1,0 +1,99 @@
+/* Layout for order and map side-by-side */
+.top-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Order details */
+.order-details {
+  width: 30rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Map section */
+.map-container {
+  width: 35rem;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Payment section */
+.payment-form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.payment-form {
+  background: #fff;
+  padding: 30px;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #999;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-size: 16px;
+  color: #444;
+  box-sizing: border-box;
+}
+
+input.form-control:focus {
+  border-color: blueviolet;
+  outline: none;
+  box-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Pay Button */
+button.btn-primary {
+  width: 100%;
+  background: linear-gradient(45deg, blueviolet, deeppink);
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+button.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+button.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

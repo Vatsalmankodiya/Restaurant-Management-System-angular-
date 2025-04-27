@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="booking_history_section">
+  <div class="container">
+<div class="container">
+    <h2 class="mt-4">Table Booking History</h2>
+  
+    <div *ngIf="loading" class="text-center">
+      Loading booking history...
+    </div>
+  
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+  
+    <div *ngIf="!loading && !error && bookingHistory.length > 0" class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Persons</th>
+            <th>Date</th>
+            <th>Booked At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookingHistory">
+            <td>{{ booking._id }}</td>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.phoneNumber }}</td>
+            <td>{{ booking.email }}</td>
+            <td>{{ booking.persons }}</td>
+            <td>{{ booking.date | date }}</td>
+            <td>{{ booking.createdAt | date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="!loading && !error && bookingHistory.length === 0" class="alert alert-info">
+      No booking history found.
+    </div>
+  </div>
+</div>
+</div>

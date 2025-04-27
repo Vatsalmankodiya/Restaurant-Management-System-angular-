@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="container">
+  <div class="content">
+
+    <!-- Left side: Name & Address Form -->
+    <div class="top-section">
+    <div class="form-section">
+      <form [formGroup]="checkoutForm">
+        <div class="form-group mb-3">
+          <label for="name">Name</label>
+          <input id="name" type="text" class="form-control" formControlName="name" />
+          <div class="text-danger mt-1" *ngIf="fc.name.touched && fc.name.invalid">
+            <small *ngIf="fc.name.errors?.required">Name is required</small>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="address">Address</label>
+          <input id="address" type="text" class="form-control" formControlName="address" />
+          <div class="text-danger mt-1" *ngIf="fc.address.touched && fc.address.invalid">
+            <small *ngIf="fc.address.errors?.required">Address is required</small>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Right side: Map -->
+    <div class="map-container">
+      <h3>Choose Your Address On Map</h3>
+      <app-map [order]="order" [readonly]="false"></app-map>
+    </div>
+    </div>
+    <!-- Order Items Section -->
+    <app-order-list [order]="order"></app-order-list>
+
+    <!-- Go To Payment Button -->
+    <div class="buttons-container">
+      <div class="buttons">
+        <button (click)="createOrder()">Go To Payment</button>
+      </div>
+    </div>
+
+  </div>
+</div>

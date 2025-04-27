@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="page-container">
+    <div class="feedback-form">
+      <h2>Give Feedback</h2>
+  
+      <label>Rating (1 to 5):</label>
+      <input type="number" [(ngModel)]="rating" min="1" max="5" />
+  
+      <label>Comment:</label>
+      <textarea [(ngModel)]="comment" rows="4"></textarea>
+  
+      <button (click)="submitFeedback()">Submit</button>
+    </div>
+  </div>
+  

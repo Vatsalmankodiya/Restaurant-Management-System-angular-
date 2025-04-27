@@ -1,0 +1,97 @@
+<!-- <app-header></app-header>
+<div class="container">
+    <div class="content"> -->
+      <!-- <app-title title="Order Summary" fontSize="1.6rem"></app-title> -->
+      <!-- <div class="summary">
+        <div>
+          <h3>Name:</h3>
+          <span>{{order.name}}</span>
+        </div>
+        <div>
+          <h3>Address:</h3>
+          <span>{{order.address}}</span>
+        </div>
+      </div>
+      <app-order-list [order]="order"></app-order-list>
+    </div>
+    <div class="map">
+        <app-map [order]="order" [readonly]="true"></app-map>
+    </div>
+    <div class="buttons-container">
+      <div class="buttons"> -->
+        <!-- <app-paypal [order]="order">
+        </app-paypal> -->
+      <!-- </div>
+    </div>
+  </div> -->
+  <app-header></app-header>
+
+
+  <!-- Main layout with order + map side-by-side -->
+  <div class="top-section">
+    <div class="order-details">
+      <h2>Order Summary</h2>
+      <p><strong>Name:</strong> {{order.name}}</p>
+      <p><strong>Address:</strong> {{order.address}}</p>
+      <app-order-list [order]="order"></app-order-list>
+    </div>
+  
+    <div class="map-container">
+      <app-map [order]="order" [readonly]="true"></app-map>
+    </div>
+  </div>
+  
+  <!-- Payment form centered below -->
+  <div class="payment-form-wrapper">
+    <div class="payment-form">
+      <h3>Card Details</h3>
+      <form #cardForm="ngForm">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input 
+            type="text" id="cardNumber" placeholder="Card Number"
+            [(ngModel)]="cardNumber" name="cardNumber"
+            required pattern="(\d{4} \d{4} \d{4} \d{4})"
+            #cardNumberField="ngModel"
+            class="form-control"
+            (input)="formatCardNumber($event)" />
+          <div *ngIf="cardNumberField.invalid && cardNumberField.touched" class="error">
+            <p *ngIf="cardNumberField.errors?.required">Card number is required.</p>
+            <p *ngIf="cardNumberField.errors?.pattern">Must be 16 digits, formatted as 4-4-4-4.</p>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="expiry">MM/YY</label>
+          <input 
+            type="text" id="expiry" placeholder="MM/YY"
+            [(ngModel)]="expiry" name="expiry"
+            required pattern="^(0[1-9]|1[0-2])\/\d{2}$"
+            #expiryField="ngModel"
+            class="form-control"
+            (input)="formatExpiry($event)" />
+          <div *ngIf="expiryField.invalid && expiryField.touched" class="error">
+            <p *ngIf="expiryField.errors?.required">Expiry date is required.</p>
+            <p *ngIf="expiryField.errors?.pattern">Invalid format (MM/YY).</p>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input 
+            type="text" id="cvv" placeholder="CVV"
+            [(ngModel)]="cvv" name="cvv"
+            required pattern="^\d{3}$"
+            #cvvField="ngModel"
+            class="form-control" />
+          <div *ngIf="cvvField.invalid && cvvField.touched" class="error">
+            <p *ngIf="cvvField.errors?.required">CVV is required.</p>
+            <p *ngIf="cvvField.errors?.pattern">CVV must be 3 digits.</p>
+          </div>
+        </div>
+  
+        <button class="btn-primary" (click)="pay()">Pay</button>
+      </form>
+    </div>
+  </div>
+  

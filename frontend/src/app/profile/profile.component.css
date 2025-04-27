@@ -1,0 +1,205 @@
+/* profile.component.css */
+
+.profile-container {
+  /* background: linear-gradient(135deg, #f0f2f0, #e0e0e0); */
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px; /* Increased padding for better spacing on smaller screens */
+}
+
+.profile-card {
+  max-width: 550px; /* Slightly wider card */
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 45px; /* Increased padding */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow */
+  animation: fadeInUp 0.6s ease-out;
+  width: 100%;
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+.profile-card h2 {
+  color: #37474f; /* Darker, more modern heading color */
+  margin-bottom: 35px; /* Increased margin */
+  text-align: center;
+  font-size: 2rem; /* Slightly larger heading */
+}
+
+.profile-info {
+  margin-bottom: 35px; /* Increased margin */
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Increased spacing between info items */
+}
+
+.info-item i {
+  margin-right: 15px;
+  color: #ffbe33; /* Accent color for icons */
+  font-size: 1.2rem;
+  width: 20px; /* Ensure consistent icon width */
+  text-align: center;
+}
+
+.profile-info p {
+  margin-bottom: 0; /* Remove default paragraph margin */
+  color: #444; /* Darker text color */
+  font-size: 1.05rem; /* Slightly larger font */
+}
+
+.profile-info strong {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #555;
+}
+
+.profile-actions {
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  justify-content: center; /* Center the buttons */
+}
+
+.profile-actions button {
+  background-color: #ffbe33;
+  border: none;
+  padding: 14px 28px; /* Slightly larger button padding */
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px; /* More rounded buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle button shadow */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-actions button:hover {
+  background-color: #e8a800;
+  transform: translateY(-3px); /* More pronounced hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+.logout-button {
+  background-color: #f44336; /* Distinct color for logout */
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.change-password-button {
+  background-color: #2196f3; /* Primary blue color */
+}
+
+.change-password-button:hover {
+  background-color: #1976d2;
+}
+
+.logout-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #ffbe33;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.logout-link:hover {
+  color: #e8a800;
+  text-decoration: underline;
+}
+
+.not-logged-in {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 25px;
+}
+
+.not-logged-in a {
+  color: #ffbe33;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.not-logged-in a:hover {
+  color: #e8a800;
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .profile-card {
+    padding: 35px;
+  }
+
+  .profile-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+  }
+
+  .info-item {
+    margin-bottom: 15px;
+  }
+
+  .profile-info p {
+    font-size: 1rem;
+  }
+
+  .profile-actions {
+    flex-direction: column; /* Stack buttons on smaller screens */
+    align-items: stretch; /* Make buttons full width */
+    gap: 10px;
+  }
+
+  .profile-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-card {
+    padding: 25px;
+  }
+
+  .profile-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .info-item i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+  }
+
+  .profile-info p {
+    font-size: 0.9rem;
+  }
+
+  .profile-actions button {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+}

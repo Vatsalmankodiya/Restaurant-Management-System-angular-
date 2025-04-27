@@ -1,0 +1,71 @@
+<app-admin-head></app-admin-head>
+<div class="add-food-container">
+    <h2>Add New Food Item</h2>
+    <form (ngSubmit)="onSubmit()" #foodForm="ngForm">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name" [(ngModel)]="food.name" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Description:</label>
+        <textarea name="description" [(ngModel)]="food.discription" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label>Price:</label>
+        <input type="number" name="price" [(ngModel)]="food.price" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Image URL:</label>
+        <input type="text" name="imageUrl" [(ngModel)]="food.imageUrl" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Stars (1 to 5):</label>
+        <input
+          type="number"
+          name="stars"
+          [(ngModel)]="food.stars"
+          required
+          min="1"
+          max="5"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>Cook Time:</label>
+        <input type="text" name="cookTime" [(ngModel)]="food.cookTime" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Tags:</label><br />
+        <label *ngFor="let tag of availableTags" class="tag-checkbox">
+            <input
+            type="checkbox"
+            [value]="tag"
+            (change)="onTagChange($event)"
+            [checked]="food.tags!.includes(tag)"
+          />
+          
+          {{ tag }}
+        </label>
+      </div>
+  
+      <div class="form-group">
+        <label>Origins (comma separated):</label>
+        <input type="text" name="origins" [(ngModel)]="originsInput" />
+      </div>
+  
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" [(ngModel)]="food.favorite" name="favorite" />
+          Favorite
+        </label>
+      </div>
+  
+      <button type="submit" [disabled]="!foodForm.form.valid">Add Food</button>
+    </form>
+  </div>
+  

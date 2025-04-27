@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.header {
+    background: #252525;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    width: 95%;
+    background: #252525;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.product-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    background: white;
+    padding: 5px;
+}
+
+.product-info {
+    flex: 2;
+    padding: 30px;
+    text-align: left;
+}
+
+.product-info h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 28px;
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.info {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.order-btn {
+    background: #ffc107;
+    border: none;
+    color: black;
+    padding: 18px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.order-btn:hover {
+    background: #e0a800;
+}
+
+.footer {
+    background: #252525;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+

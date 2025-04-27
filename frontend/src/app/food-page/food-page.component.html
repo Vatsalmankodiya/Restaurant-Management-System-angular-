@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{food.name}}</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <app-header></app-header>
+    
+    <!-- <div class="header">
+        {{food.name}}
+    </div> -->
+
+    <div *ngIf="food" class="header" >
+        <p>{{ food.name }}</p>
+      </div>
+
+    <div class="product-container">
+        <div class="product-img">
+            <img [src]="food.imageUrl" [alt]="food.name">
+        </div>
+        <div class="product-info">
+            <h2>{{food.name}}</h2>
+            <p class="price">₹{{food.price}}</p>
+            <p class="description">
+                {{food.discription}}
+            </p>
+            <p class="info"><strong>Origin:</strong> {{food.origins}}</p>
+            <p class="info"><i class="fa fa-clock-o"></i> Estimated Time: {{food.cookTime}}</p>
+            <button class="order-btn" (click)="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; All Rights Reserved By Free HTML Templates</p>
+        <p>Distributed By ThemeWagon</p>
+    </div>
+
+</body>
+</html>

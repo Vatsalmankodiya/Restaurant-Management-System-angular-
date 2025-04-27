@@ -1,0 +1,43 @@
+<app-admin-head></app-admin-head>
+<div class="admin-order-list">
+    <h2>All Orders</h2>
+    <div class="order-table-container">
+      <table class="order-table">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>User ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Items</th>
+      <th>Total Price</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.userId }}</td>
+      <td>{{ order.name }}</td>
+      <td>{{ order.address }}</td>
+      <td>
+        <span [ngClass]="{
+          'status-pending': order.status === 'Pending',
+          'status-completed': order.status === 'Completed',
+          'status-cancelled': order.status === 'Cancelled'
+        }">{{ order.status }}</span>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let item of order.items">
+            {{ item.food.name }} - ₹{{ item.price }} x {{ item.quantity }}
+          </li>
+        </ul>
+      </td>
+      <td>₹{{ order.totalPrice }}</td>
+      <td>{{ order.createdAt | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

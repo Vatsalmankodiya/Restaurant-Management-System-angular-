@@ -1,0 +1,84 @@
+.admin-booking-list {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.admin-booking-list h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.booking-table-container {
+    overflow-x: auto;
+}
+
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-table th,
+.booking-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.booking-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.booking-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.booking-table th {
+    font-weight: bold;
+}
+
+.booking-table td ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.booking-table td ul li {
+    margin-bottom: 4px;
+}
+
+.status-tag {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-completed {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.status-pending {
+    background-color: orange;
+    color: white;
+}
+
+.status-cancelled {
+    background-color: red;
+    color: white;
+}
+
+.no-bookings {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+    padding: 20px;
+}

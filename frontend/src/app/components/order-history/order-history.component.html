@@ -1,0 +1,27 @@
+<app-header></app-header>
+<h1>Order History</h1>
+
+<div *ngIf="loading">Loading order history...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="!loading && orders.length === 0 && !error">
+    You haven't placed any orders yet.
+</div>
+
+<ul *ngIf="!loading && orders.length > 0">
+    <li *ngFor="let order of orders">
+        <h3>Order ID: {{ order._id }}</h3>
+
+        <p>Total Price: {{ order.totalPrice | currency }}</p>
+
+        <app-order-list [order]="order"></app-order-list>
+
+        <!-- Order Footer Section -->
+        <div class="order-footer">
+            <span>Order Date: {{ order.createdAt | date:'medium' }}</span>
+            <span class="order-status">{{ order.status }}</span>
+        </div>
+
+        <hr>
+    </li>
+</ul>

@@ -1,0 +1,28 @@
+<app-admin-head></app-admin-head>
+<div class="admin-booking-list">
+  <h2>All Table Bookings</h2>
+  <div class="booking-table-container">
+    <table class="booking-table" *ngIf="bookings.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Date</th>
+          <th>Persons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.email }}</td>
+          <td>{{ booking.phoneNumber }}</td>
+          <td>{{ booking.date | date: 'medium' }}</td>
+          <td>{{ booking.persons }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="bookings.length === 0" class="no-bookings">No bookings found.</p>
+</div>

@@ -1,0 +1,47 @@
+<app-admin-head></app-admin-head>
+<div class="admin-food-list">
+    <h2>All Foods</h2>
+  
+    <div *ngIf="foods.length === 0" class="no-data">No food items found.</div>
+  
+    <div *ngIf="foods.length > 0" class="table-container">
+      <table class="food-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <!-- <th>Stars</th> -->
+            <th>Favorite</th>
+            <th>Tags</th>
+            <!-- <th>Origins</th> -->
+            <th>Cook Time</th>
+            <th>Actions</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let food of foods">
+            <td><img [src]="food.imageUrl" alt="{{ food.name }}" width="60" height="60"></td>
+            <td>{{ food.name }}</td>
+            <td>{{ food.discription }}</td>
+            <td>₹{{ food.price }}</td>
+            <!-- <td>{{ food.stars }} ⭐</td> -->
+            <td>{{ food.favorite ? 'Yes' : 'No' }}</td>
+            <td>
+              <span *ngFor="let tag of food.tags" class="tag">{{ tag }}</span>
+            </td>
+            <!-- <td>{{ food.origins.join(', ') }}</td> -->
+            <td>{{ food.cookTime }}</td>
+            <td>
+                <div class="actions-container">
+                <button style="background-color: red; color: white;" (click)="deleteFood(food.id)">Delete</button>
+                <button style="background-color: blue; color: white;" (click)="editFood(food.id)">Edit</button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

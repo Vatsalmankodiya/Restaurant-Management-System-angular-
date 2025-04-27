@@ -1,0 +1,69 @@
+<div class="add-food-container">
+  <h2>Add New Food Item</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="food.name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="food.discription" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" [(ngModel)]="food.price" required />
+    </div>
+
+    <div class="form-group">
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="food.imageUrl" required />
+    </div>
+
+    <div class="form-group">
+      <label for="stars">Stars (1 to 5):</label>
+      <input type="number" id="stars" name="stars" [(ngModel)]="food.stars" min="1" max="5" required />
+    </div>
+
+    <div class="form-group">
+      <label for="cookTime">Cook Time:</label>
+      <input type="text" id="cookTime" name="cookTime" [(ngModel)]="food.cookTime" required />
+    </div>
+
+    <div class="form-group">
+      <label for="tags">Tags:</label>
+      <div *ngFor="let tag of availableTags">
+        <label>
+          <input
+            type="checkbox"
+            [value]="tag"
+            [checked]="food.tags?.includes(tag)"
+            (change)="onTagChange($event)"
+          />
+          {{ tag }}
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="origins">Origins (Comma-separated):</label>
+      <input
+        type="text"
+        id="origins"
+        name="origins"
+        [(ngModel)]="originsInput"
+        placeholder="Comma-separated"
+      />
+    </div>
+
+    <div class="form-group checkbox">
+      <label for="favorite">
+        <input type="checkbox" id="favorite" name="favorite" [(ngModel)]="food.favorite" />
+        Favorite
+      </label>
+    </div>
+
+    <button type="submit">Add Food</button>
+  </form>
+</div>

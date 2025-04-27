@@ -1,0 +1,134 @@
+.cart-container {
+    padding: 2rem;
+    background-color: #f8f8f8; /* subtle light gray like login background */
+  }
+  
+  .cart-content {
+    display: flex;
+    gap: 1.5rem;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* increased shadow */
+  }
+  
+  .cart-items {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .cart-card {
+    display: flex;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* stronger shadow */
+  }
+  
+  .cart-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* soft shadow for image */
+  }
+  
+  .cart-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .food-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1f1f1f; /* dark gray instead of purple */
+    text-decoration: none;
+  }
+  
+  .food-price {
+    font-size: 1rem;
+    color: #333; /* darker text */
+  }
+  
+  .quantity-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .remove-button {
+    background-color: #ffecec;
+    color: #d9534f; /* toned down red */
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(220, 53, 69, 0.2); /* added button shadow */
+  }
+  
+  .checkout-section {
+    flex: 1;
+    min-width: 280px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* deeper shadow */
+  }
+  
+  .checkout-summary {
+    font-size: 1.3rem;
+    color: #1f1f1f; /* dark gray */
+  }
+  
+  .checkout-button {
+    background-color: #fcb900; /* matching login page yellow */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(252, 185, 0, 0.3); /* glow effect */
+  }
+  
+  .checkout-button:hover {
+    background-color: #e0a700; /* slightly darker yellow on hover */
+    box-shadow: 0 6px 16px rgba(252, 185, 0, 0.4); /* enhanced shadow on hover */
+  }
+  .empty-cart-message {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .empty-cart-message h2 {
+    font-size: 24px;
+    color: #444;
+  }
+  
+  .back-to-menu {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #e0a700;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  

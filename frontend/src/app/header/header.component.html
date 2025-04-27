@@ -1,0 +1,72 @@
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <a class="navbar-brand" routerLink="/">
+        <span>Feane</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/search">Search</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/menu">Menu</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/tablebook">Book Table</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/cart">cart</a>
+          </li>
+         
+        </ul>
+
+        <div class="user_option">
+          <!-- If not authenticated -->
+          <!-- <ng-container *ngIf="!isAuth; else loggedIn">
+            <a routerLink="/login" class="user_link">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+          </ng-container> -->
+          <!-- <form class="form-inline">
+            <button class="btn nav_search-btn" type="submit">
+              <a routerLink="/search" class="fa fa-search" aria-hidden="true"></a>
+            </button>
+          </form> -->
+          
+          <!-- If authenticated -->
+          <ng-template #loggedIn>
+            <div class="user-menu">
+              <span class="user-name">Hello, {{ user?.name }}</span>
+              <div class="dropdown">
+                <a routerLink="/profile" class="dropdown-item">Profile</a>
+                <a routerLink="/bookinghistory" class="dropdown-item">Table</a>
+                <a routerLink="/orderhistory" class="dropdown-item">Orders</a>
+                <a (click)="logout()" class="dropdown-item">Logout</a>
+              </div>
+            </div>
+          </ng-template>
+
+          
+          <ng-container *ngIf="!isAuth; else loggedIn">
+              <a routerLink="/login" class="order_online">
+            Login
+          </a>
+          </ng-container>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

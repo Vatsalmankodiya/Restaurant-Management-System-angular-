@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<!-- Cart with items -->
+<div *ngIf="cart && cart.items.length; else emptyCart" class="cart-container">
+  <div class="cart-content">
+    <div class="cart-items">
+      <div class="cart-card" *ngFor="let cartItem of cart.items">
+        <div class="cart-image">
+          <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+        </div>
+        <div class="cart-details">
+          <a class="food-name" routerLink="/food/{{cartItem.food.id}}">
+            {{ cartItem.food.name }}
+          </a>
+          <div class="quantity-select">
+            <label for="quantity">Qty:</label>
+            <select #quantitySelect
+              [value]="cartItem.quantity"
+              (change)="changeQuantity(cartItem, quantitySelect.value)">
+              <option *ngFor="let qty of [1,2,3,4,5]" [value]="qty">{{ qty }}</option>
+            </select>
+          </div>
+          <div class="food-price">
+           ₹ {{ cartItem.price }}
+          </div>
+          <button class="remove-button" (click)="removeFromCart(cartItem)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout-section">
+      <div class="checkout-summary">
+        <div>Count: {{ cart.totalCount }}</div>
+        <div>Price: ₹{{ cart.totalPrice }}</div>
+      </div>
+      <a class="checkout-button" routerLink="/checkout">Proceed to Checkout</a>
+    </div>
+  </div>
+</div>
+
+<!-- Empty cart message -->
+<ng-template #emptyCart>
+  <div class="empty-cart-message">
+    <h2>Your cart is empty</h2>
+    <p>Looks like you haven't added any items yet.</p>
+    <a routerLink="/menu" class="back-to-menu">Go to Menu</a>
+  </div>
+</ng-template>

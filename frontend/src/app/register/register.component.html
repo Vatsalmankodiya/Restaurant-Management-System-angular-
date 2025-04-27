@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<section class="register_section layout_padding" style="margin-top: 30px; margin-bottom: 30px;">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Register Your Account</h2>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" class="form-control" formControlName="name" required>
+        <div class="error-list" *ngIf="fc.name.errors && isSubmitted">
+          <div *ngIf="fc.name.errors.required">Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" class="form-control" formControlName="email" required>
+        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+          <div *ngIf="fc.email.errors.required">Email is required</div>
+          <div *ngIf="fc.email.errors.email">Email is not valid</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" class="form-control" formControlName="password" required>
+        <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+          <div *ngIf="fc.password.errors.required">Password is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" type="password" class="form-control" formControlName="confirmPassword" required>
+        <div class="error-list" *ngIf="fc.confirmPassword.errors && isSubmitted">
+          <div *ngIf="fc.confirmPassword.errors.required">Confirm Password is required</div>
+          <div *ngIf="fc.confirmPassword.errors.mustMatch">Passwords must match</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input id="address" class="form-control" formControlName="address" required>
+        <div class="error-list" *ngIf="fc.address.errors && isSubmitted">
+          <div *ngIf="fc.address.errors.required">Address is required</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Register</button>
+
+      <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+          Login Here
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+
+

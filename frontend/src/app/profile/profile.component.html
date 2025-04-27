@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="profile-container">
+  <div class="profile-card">
+    <h2>Your Profile</h2>
+    <div class="profile-info" *ngIf="user">
+      <div class="info-item">
+        <i class="fas fa-user"></i>
+        <p><strong>Name:</strong> {{ user.name }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Address:</strong> {{ user.address }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-shield-alt" *ngIf="user.isAdmin"></i>
+        <i class="fas fa-user-check" *ngIf="!user.isAdmin"></i>
+        <p><strong>Admin:</strong> {{ user.isAdmin ? 'Yes' : 'No' }}</p>
+      </div>
+    </div>
+    <div class="profile-actions">
+      <!-- <button class="logout-button" routerLink="/"><i class="fas fa-sign-out-alt"></i>Back</button> -->
+      <button (click)="logout()" class="logout-button"><i class="fas fa-sign-out-alt"></i>Logout</button>
+      <button class="change-password-button" routerLink="/changepass"><i class="fas fa-key"></i>Change Password</button>
+    </div>
+    <div class="not-logged-in" *ngIf="!user">
+      <p>You are not logged in. <a routerLink="/login">Login here</a></p>
+    </div>
+  </div>
+</div>
