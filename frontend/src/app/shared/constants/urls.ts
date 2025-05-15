@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://restaurant-management-system-angular-2.onrender.com';
 
 export const FOOD_URL = `${BASE_URL}/api/foods`; 
 export const FOOD_BY_ID_URL = `${BASE_URL}/api/foods`;
